@@ -39,6 +39,7 @@ class UpgradeSchema implements UpgradeSchemaInterface
         $installer = $setup;
 
         $installer->startSetup();
+        /*
         // 0.0.2
         if(version_compare($context->getVersion(), '0.0.2', '<')) {
             $installer->getConnection()->changeColumn(
@@ -323,6 +324,7 @@ class UpgradeSchema implements UpgradeSchemaInterface
                 ->setComment("AME Transactions");
             $setup->getConnection()->createTable($table);
         }
+        */
         if(version_compare($context->getVersion(), '0.0.15', '<')) {
             $installer->getConnection()->addColumn(
                 $installer->getTable('ame_transaction'),
